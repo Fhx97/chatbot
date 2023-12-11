@@ -11,12 +11,29 @@
 # 统计语言模型:N-Gram统计模型、马尔科夫模型、隐马尔可夫模型
 
 # 语料:语言材料
-# 词性标注:给每个词或词语打词类标签,如形容词、动词、名词。
+# import nltk
+# sentence = " At eight o'clock on Thursday morning Jack didn't feel so good."
+# tokens = nltk.word_tokenize(sentence)
+# print(tokens)
+#
+# tagged = nltk.pos_tag(tokens)
+# print(tagged)
 
-import nltk
-sentence = " At eight o'clock on Thursday morning Jack didn't feel so good."
-tokens = nltk.word_tokenize(sentence)
-print(tokens)
 
-tagged = nltk.pos_tag(tokens)
-print(tagged)
+# 词性标注:给每个词或词语打词类标签,如形容词、动词、名词。NLTK jieba(中文分词库)
+# 基于规则的词性标注
+# 基于隐马尔科夫模型HMM的词性标注
+# 基于转移的词性标注
+# 基于转移与隐马尔科夫模型相结合的词性标注
+
+# import nltk
+# text = nltk.word_tokenize("And now for something completely different")
+# print(text)
+# print(nltk.pos_tag(text))
+
+import jieba.posseg as pseg
+words = pseg.cut('我爱丰小帅！')
+for word,flag in words:
+    print('%s %s' % (word,flag))
+
+
